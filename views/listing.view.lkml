@@ -30,6 +30,11 @@ view: listing {
     datatype: date
     sql: ${TABLE}.last_review ;;
   }
+  dimension: listing_location {
+    type:  location
+    sql_latitude: ${latitude} ;;
+    sql_longitude:  ${longitude} ;;
+  }
   dimension: latitude {
     type: number
     sql: ${TABLE}.latitude ;;
@@ -78,6 +83,12 @@ view: listing {
     type: string
     sql: ${TABLE}.room_type ;;
   }
+  measure: average_price {
+    sql:  ${TABLE}.price ;;
+    type: average
+    drill_fields: [id, name, host_name, reviews.count]
+  }
+
   measure: count {
     type: count
     drill_fields: [detail*]
@@ -86,13 +97,13 @@ view: listing {
   # ----- Sets of fields for drilling ------
   set: detail {
     fields: [
-	id,
-	name,
-	host_name,
-	reviews.count,
-	review.count,
-	calendar.count
-	]
+  id,
+  name,
+  host_name,
+  reviews.count,
+  review.count,
+  calendar.count
+  ]
   }
 
 }
