@@ -2,8 +2,8 @@ project_name: "airbnb_data"
 
 application: test-looker-embed {
   label: "label"
-  url: "http://localhost:8080/bundle.js"
-  # file: "bundle.js
+  #url: "https://localhost:8080/bundle.js"
+  file: "bundle.js"
   entitlements: {
     core_api_methods: ["me"] #Add more entitlements here as you develop new functionality
     use_embeds: yes
