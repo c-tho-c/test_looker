@@ -9,3 +9,12 @@ application: test-looker-embed {
     use_embeds: yes
   }
 }
+
+visualization: {
+  id: "kpi_viz"
+  label: "KPI Blocks"
+  file: "visualizations/kpi_viz.js"
+  dependencies: [
+    "https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.4/d3.min.js"
+  ]
+}
