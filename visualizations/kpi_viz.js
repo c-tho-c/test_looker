@@ -220,27 +220,29 @@ const t = {
       <style>
         .kpi-container {
           display: grid;
-          gap: 20px;
-          padding: 20px;
+          gap: 0;
+          padding: 0;
           background: transparent;
           font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-          min-height: 200px;
+          min-height: 100%;
           width: 100%;
+          height: 100%;
           box-sizing: border-box;
         }
 
         .kpi-card {
-          border-radius: 12px;
-          padding: 24px;
-          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+          border-radius: 0;
+          padding: 32px;
+          box-shadow: none;
           transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
           position: relative;
           overflow: hidden;
-          background: white;
+          background: transparent;
           display: flex;
           flex-direction: column;
           justify-content: center;
-          min-height: 180px;
+          min-height: 100%;
+          height: 100%;
         }
 
         .kpi-card::before {
@@ -249,19 +251,19 @@ const t = {
           top: 0;
           left: 0;
           right: 0;
-          height: 3px;
+          height: 0;
           background: linear-gradient(90deg, #3B82F6, #8B5CF6);
           opacity: 0;
           transition: opacity 0.3s ease;
         }
 
         .kpi-card:hover {
-          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-          transform: translateY(-4px);
+          box-shadow: none;
+          transform: none;
         }
 
         .kpi-card:hover::before {
-          opacity: 1;
+          opacity: 0;
         }
 
         .kpi-card.animate {
@@ -301,7 +303,7 @@ const t = {
         }
 
         .kpi-card:hover .kpi-icon {
-          transform: scale(1.1) rotate(5deg);
+          transform: none;
         }
 
         .kpi-title {
@@ -477,7 +479,7 @@ const t = {
 
       const container = element.querySelector(".kpi-container");
       container.style.gridTemplateColumns = `repeat(${cardsPerRow}, 1fr)`;
-      container.style.gap = `${config.card_gap || 20}px`;
+      container.style.gap = "0";
       container.innerHTML = "";
 
       const fragment = document.createDocumentFragment();
