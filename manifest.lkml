@@ -18,3 +18,11 @@ visualization: {
     "https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.4/d3.min.js"
   ]
 }
+visualization: {
+  id: "dynamic-table-viz"
+  label: "Dynamic Hierarchical Table"
+  file: "visualizations/dynamic_table.js"
+  dependencies: [
+    "https://code.jquery.com/jquery-3.6.0.min.js"
+  ]
+}
